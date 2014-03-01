@@ -1,0 +1,43 @@
+//
+// Form & Inputs
+// -----------------------------------------
+
+
+// Fieldset
+// -----------------------------------------
+fieldset {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+
+// Control Groups
+// -----------------------------------------
+.control-group {
+	@include clearfix;
+	position: relative;
+	display: block;
+	.controls {
+		position: relative;
+		&.controls-half {
+			@include clearfix;
+			@include inline-block();
+			float: left;
+			width: 48%;
+			&:last-child {
+				margin-left: 4%;
+			}
+		}
+		&.controls-third {
+			@include inline-block();
+			@include clearfix;
+			float: left;
+			margin-left: 4%;
+			width: 33.333333333%;
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+	}
+}

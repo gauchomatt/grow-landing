@@ -1,0 +1,118 @@
+//
+// Main styles for the landing page
+// ==========================================================================
+
+
+// Core
+// ==========================================================================
+html { 
+	@include size(100% 100%);
+	background: url(bg-bike) no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='bg-bike.jpg', sizingMethod='scale')";
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='bg-bike.jpg', sizingMethod='scale');
+}
+
+// Header
+// ==========================================================================
+header {
+	@include fadeInDown($delay: 1s);
+	@include linear-gradient(-75deg, $blue, $green);
+	@include size(100% 4px);
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	opacity: 0.75;
+}
+
+// Section
+// ==========================================================================
+.logo {
+	@include retina-image(grow-logo, 153px 194px, $retina-filename:"@2x");
+	@include size(153px 194px);
+	margin: auto;
+}
+.signup {
+	@include flipInX;
+	position: absolute;
+	top: 50%;
+	margin-top: -175px;
+	width: 100%;
+	@include screen(320px, 640px) {
+		position: relative;
+		margin-top: 0;
+		top: auto;
+	}
+	.contact-form {
+		padding: em(44) 0;
+		input {
+			@include size(100% 70px);
+			@include placeholder { color: $white; }
+			position: relative;
+			display: block;
+			padding: 0 em(50) 0 em(10);
+			outline: none;
+			border: none;
+			border-bottom: 4px solid $green;
+			background: transparent;
+			background-color: rgba(255, 255, 255, 0);
+			color: $white;
+			font-size: em(28);
+			@include screen(320px, 640px) {
+				padding: 0 em(10);
+			}
+		}
+		.send {
+			@include transition (all 0.6s ease-in-out);
+			@include border-top-radius(6px);
+			@include border-bottom-radius(6px);
+			@include border-left-radius(6px);
+			@include border-right-radius(6px);
+			@include screen(320px, 640px) {
+				padding: em(20) em(25);
+				position: relative;
+				top: auto;
+				display: block;
+				margin-top: 20px;
+				width: 100%;
+			}
+			position: absolute;
+			top: 8px;
+			right: 0;
+			display: block;
+			padding: em(10) em(25);
+			outline: none;
+			border: none;
+			background: $green;
+			color: $white;
+			&:hover {
+				background-color: $greenDark;
+			}
+		}
+	}
+}
+
+// Footer
+// ==========================================================================
+footer {
+	@include fadeInUp($delay: 2s);
+	@include size(100% auto);
+	position: absolute;
+	bottom: 0;
+	background-color: rgba(255,255,255,.5);
+	text-align: center;
+	h1 {
+		margin: 0;
+		padding: em(10) 0;
+		color: $slate;
+		font-size: 1.0rem;
+		span {
+			color: $green;
+			font-weight: 700;
+		}
+	}
+}

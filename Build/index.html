@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Grow | Start Doing Now</title>
+
+	
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link'); 
+                    for (var i = 0; i < links.length;i++) { 
+                    var link = links[i]; 
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+      
+
+	<link rel='stylesheet' href='assets/css/style.css'>
+	<script src='assets/js/vendor/modernizr.js'></script>
+
+	<link href="assets/favicon.ico" rel="shortcut icon">
+	<link href="assets/apple-touch-icon.png" rel="apple-touch-icon">
+
+</head>
+
+<body>
+
+	<header class="grow-gradient"></header>
+
+<section class="signup">
+	<div class="container">
+		<div class="row clearfix">
+			<div class="column third">
+				<figure class="logo"></figure>
+			</div>
+			<div class="column two-thirds">
+				<form class="contact-form" action="" method="post">
+					<fieldset>
+						<div class="control-group">
+							<div class="controls">
+								<input class="name" name="name" placeholder="What's your email?">
+								<button class="send" type="submit">Send</button>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+
+<footer>
+	<h1>It's time to start doing now. <span>Analytics + Accountability</span></h1>
+</footer>
+
+<!-- Typekit includes -->
+<link href='http://fonts.googleapis.com/css?family=Muli:300,300italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+<!-- Modernizr -->
+<script src='assets/js/vendor/jquery.js'></script>
+<script src='assets/js/app.js'></script>
+
+</body>
+
+</html>
