@@ -8,31 +8,9 @@
 	<title>Grow | Start Doing Now</title>
 
 	
-        <!-- Hammer reload -->
-          <script>
-            setInterval(function(){
-              try {
-                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
-                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
-                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
-                ws.onmessage = function(){
-                  var links = document.getElementsByTagName('link'); 
-                    for (var i = 0; i < links.length;i++) { 
-                    var link = links[i]; 
-                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
-                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
-                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
-                    }
-                  }
-                }
-              }catch(e){}
-            }, 1000)
-          </script>
-        <!-- /Hammer reload -->
-      
 
-	<link rel='stylesheet' href='assets/css/style.css'>
-	<script src='assets/js/vendor/modernizr.js'></script>
+	<link rel='stylesheet' href='deab5185dd98a71c84caf0def72cc8b7.css'>
+	<script src='e72516e11377f0f542b8668e2a69b248.js'></script>
 
 	<link href="assets/favicon.ico" rel="shortcut icon">
 	<link href="assets/apple-touch-icon.png" rel="apple-touch-icon">
@@ -74,8 +52,7 @@
 <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
 <!-- Modernizr -->
-<script src='assets/js/vendor/jquery.js'></script>
-<script src='assets/js/app.js'></script>
+<script src='8731a3f2c56bff3d9d22cb9f086d0a41.js'></script>
 
 </body>
 
